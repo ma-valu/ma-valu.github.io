@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>mavalu</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles/styles-base.css">
+    <link rel="stylesheet" href="styles/styles-index.css">
+
+    <link rel="icon" type="image/x-icon" href="/images/mvl-favicon.ico">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar blend-layer">
+        <a href="home.html" class="link">MVL</a>
+
+        <div class="links">
+            <a href="home.html" class="link">Proyectos</a>
+            <a href="info.html" class="link link--inactive">Info</a>
+        </div>
+    </nav>
+
+    <!-- INDEX -->
+
+    <main class="work-index blend-layer">
+
+        <a class="block" href="/work/02-Strick.html">
+            <article class="work-item" data-preview="./images/preview-images/Preview-Strick.gif">
+                <div class="work-item__title blend-layer">Strick</div>
+                <div class="work-item__category blend-layer">Tipografía</div>
+                <div class="work-item__year blend-layer">[WIP]</div>
+            </article>
+        </a>
+
+        <a class="block" href="/work/03-EKKO-40.html">
+            <article class="work-item" data-preview="./images/preview-images/Preview-EKKO40.gif">
+                <div class="work-item__title blend-layer">EKKO 40</div>
+                <div class="work-item__category blend-layer">Campaña [+]</div>
+                <div class="work-item__year blend-layer">2026</div>
+            </article>
+        </a>
+
+        <a class="block" href="/work/04-GoedVerhaal.html">
+            <article class="work-item" data-preview="./images/preview-images/Preview-GoedVerhaal.gif">
+                <div class="work-item__title blend-layer">Goed Verhaal</div>
+                <div class="work-item__category blend-layer">Motion [+]</div>
+                <div class="work-item__year blend-layer">2026</div>
+            </article>
+        </a>
+
+        <a class="block" href="/work/05-Krib.html">
+            <article class="work-item" data-preview="./images/preview-images/Preview-Krib.gif">
+                <div class="work-item__title blend-layer">Krib</div>
+                <div class="work-item__category blend-layer">Id. visual [+]</div>
+                <div class="work-item__year blend-layer">2025</div>
+            </article>
+        </a>
+
+        <a class="block" href="/work/06-Het-Muziek-website.html">
+            <article class="work-item" data-preview="./images/preview-images/Preview-HM.png">
+                <div class="work-item__title blend-layer">Het Muziek Web</div>
+                <div class="work-item__category blend-layer">Diseño UI</div>
+                <div class="work-item__year blend-layer">2025</div>
+            </article>
+        </a>
+
+        <a class="block" href="/work/08-Mujeres-Libres.html">
+            <article class="work-item" data-preview="./images/preview-images/Preview-ML.gif">
+                <div class="work-item__title blend-layer">Mujeres Libres</div>
+                <div class="work-item__category blend-layer">Tipografía, Investigación</div>
+                <div class="work-item__year blend-layer">2024</div>
+            </article>
+        </a>
+
+        <a class="block" href="/work/09-Dit-i-fest.html">
+            <article class="work-item" data-preview="./images/preview-images/Preview-DIF.png">
+                <div class="work-item__title blend-layer">Dit i Fest!</div>
+                <div class="work-item__category blend-layer">Id. visual, tipografía [+]</div>
+                <div class="work-item__year blend-layer">2024</div>
+            </article>
+        </a>
+
+        <a class="block" href="/work/10-La-Zurda.html">
+            <article class="work-item" data-preview="./images/preview-images/Preview-LaZurda.png">
+                <div class="work-item__title blend-layer">La Zurda</div>
+                <div class="work-item__category blend-layer">Editorial [+]</div>
+                <div class="work-item__year blend-layer">2024</div>
+            </article>
+        </a>
+
+        <a class="block" href="/work/11-Refs.html">
+            <article class="work-item" data-preview="./images/preview-images/Preview-Refs.png">
+                <div class="work-item__title blend-layer ">Refs701;x</div>
+                <div class="work-item__category blend-layer">Editorial [+]</div>
+                <div class="work-item__year blend-layer">2023</div>
+            </article>
+        </a>
+
+        
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer blend-layer">
+        Copyright © mavalu, 2026
+    </footer>
+
+    <!-- IMG PREVIEW -->
+
+    <div id="preview-layer">
+        <img
+            class="preview-image"
+            id="previewImg"
+            src=""
+            alt=""
+            aria-hidden="true"
+        />
+    </div>
+
+    <script>
+        const items = document.querySelectorAll('.work-item');
+        const previewImg = document.getElementById('previewImg');
+
+        const IMG_W = 100;
+        const IMG_H = Math.round(100 * 4 / 5);
+
+        function getRandomPosition() {
+            const vw = window.innerWidth;
+            const vh = window.innerHeight;
+
+            const x = 20 + Math.random() * (vw - IMG_W - 40);
+            const y = 20 + Math.random() * (vh - IMG_H - 40);
+            const tilt = (Math.random() * 4 - 2).toFixed(2);
+
+            return { x, y, tilt };
+        }
+
+        items.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                const src = item.dataset.preview;
+                const { x, y, tilt } = getRandomPosition();
+
+                previewImg.style.left = `${x}px`;
+                previewImg.style.top = `${y}px`;
+                previewImg.style.setProperty('--tilt', `${tilt}deg`);
+
+                if (previewImg.src !== src) {
+                    previewImg.src = src;
+                }
+
+                previewImg.classList.add('visible');
+            });
+
+            item.addEventListener('mouseleave', () => {
+                previewImg.classList.remove('visible');
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+/* ABOUT */
+
+.about-container {
+    margin-top: 2.3rem;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 2.7rem;
+
+    min-height: 100%;
+}
+
+.about-container-top {
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--space);
+}
+
+.intro-text {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.45rem;
+}
+
+.about-p {
+    font-size: 1.2rem;
+    font-weight: var(--fw-bold);
+
+    color: #fff;
+    mix-blend-mode: difference;
+}
+
+.external-link {
+    text-decoration: underline !important;
+}
+
+/* CV GRID */
+
+.about-container-btm {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    padding-bottom: 1.8rem;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2rem;
+
+    padding-right: 1.8rem;
+}
+
+.cv-section {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+}
+
+.cv-section-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.8rem;
+}
+
+.cv-section-title {
+    font-size: 0.75rem;
+    font-weight: var(--fw-bold);
+
+    color: #fff;
+    mix-blend-mode: difference;
+}
+
+.cv-item-year,
+.cv-item-title,
+.cv-item-detail {
+    font-size: 0.8rem;
+    font-weight: var(--fw-regular);
+
+    color: #fff;
+    mix-blend-mode: difference;
+}
+
+.cv-item-year {
+    opacity: 0.4;
+    margin-bottom: 0.15rem;
+}
+
+/* RESPONSIVE — TABLET (≤ 900px) */
+
+@media (max-width: 900px) {
+    .about-p {
+        font-size: 1rem;
+    }
+
+    .about-container-btm {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 0;
+    }
+
+    .col {
+        padding-right: 1.2rem;
+    }
+}
+
+/* RESPONSIVE — MOVIL (≤ 640px) */
+
+@media (max-width: 640px) {
+    .about-container {
+        margin-top: 0;
+        gap: 2rem;
+
+        padding-bottom: 3rem;
+    }
+
+    .about-p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .about-container-btm {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .col {
+        padding-right: 0;
+    }
+
+    .cv-item-title,
+    .cv-item-detail {
+        font-size: 0.8rem;
+    }
+}
